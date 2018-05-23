@@ -1,0 +1,184 @@
+<div class="row"> 
+			<div class="col-md-12"> 
+				<form role="form">
+					<!-- general form elements -->
+					<div class="box box-success">
+						<div class="box-header">
+						  <h3 class="box-title">Datos Personales</h3>
+						</div><!-- /.box-header -->
+						<!-- form start --> 
+						<div class="box-body">
+							<div class="form-horizontal">
+								<div class="form-group">						
+									<label class = "control-label col-md-2" >Primer Nombre:</label>
+									<div class="col-md-8">								
+										<input type="text" class="form-control" id="_pnombre"/>
+									</div>
+								</div>
+								<div class="form-group">						
+									<label class = "control-label col-md-2" >Segundo Nombre:</label>
+									<div class="col-md-8">								
+										<input type="text" class="form-control" id="_snombre"/>
+									</div>
+								</div>
+								<div class="form-group">						
+									<label class = "control-label col-md-2" >Primer Apellido:</label>
+									<div class="col-md-8">								
+										<input type="text" class="form-control" id="_papellido"/>
+									</div>
+								</div>
+								<div class="form-group">						
+									<label class = "control-label col-md-2" >Segundo Apellido:</label>
+									<div class="col-md-8">								
+										<input type="text" class="form-control" id="_sapellido"/>
+									</div>
+								</div>
+								<div class="form-group">						
+									<label class = "control-label col-md-2" >Apellido de Casad@:</label>
+									<div class="col-md-8">								
+										<input type="text" class="form-control" id="_capellido"/>
+									</div>
+								</div>
+								<div class="form-group">						
+									<label class = "control-label col-md-2" ></label>
+									<div class="col-md-8">			
+										<code>( No ingresar "de", el sistema lo agrega automaticamente.)</code>
+									</div>
+								</div>
+								<div class="form-group">						
+									<label class = "control-label col-md-2" >DPI:</label>
+									<div class="col-md-2">								
+										<input type="text" class="form-control" id="_dpi"/>
+									</div>
+								</div>
+								<!-- radio -->
+								<div class="form-group">
+									<label class = "control-label col-md-2" >Monto:</label>
+									<label  class="col-md-1">
+									  <input type="radio" name="r1" class="minimal" checked/>
+									  15.00
+									</label>
+									<label  class="col-md-1">
+									  <input type="radio" name="r1" class="minimal"/>
+									  30.00
+									</label>
+									<label  class="col-md-1">
+									  <input type="radio" name="r1" class="minimal" >
+									  50.00
+									</label>
+									<label  class="col-md-1">
+									  <input type="radio" name="r1" class="minimal" >
+									  75.00
+									</label>
+									<label  class="col-md-1">
+									  <input type="radio" name="r1" class="minimal">
+									  100.00
+									</label>
+									<label  class="col-md-1">
+									  <input type="radio" name="r1" class="minimal"/>
+									  150.00
+									</label>
+								</div>
+								<div class="form-group">						
+									<label class = "control-label col-md-2" ></label>
+									<div class="col-md-8">			
+										<code>( Monto ya incluye multa a partir de 01/04/2018 )</code>
+									</div>
+								</div>
+								<div class="form-group">	
+									<label class = "control-label col-md-2" >¿Cuanto pagar?</label>	
+									<div class="col-md-4">	
+									<table class="table table-striped" id="_guia">
+										<tr>
+										  <th>Ingresos Mensuales</th>
+										  <th>Arbrito</th>
+										  <th>Con Multa</th>
+										</tr>
+										<tr>
+										  <td>De Q500.01 a Q1,000.00</td>
+										  <td>Q10.00</td>
+										  <td>Q20.00</td>
+										</tr>
+										<tr>
+										  <td>De Q1,000.01 a Q3,000.00</td>
+										  <td>Q15.00</td>
+										  <td>Q30.00</td>
+										</tr>
+										<tr>
+										  <td>De Q3,000.01 a Q6,000.00</td>
+										  <td>Q50.00</td>
+										  <td>Q100.00</td>
+										</tr>
+										<tr>
+										  <td>De Q6,000.01 a Q9,000.00</td>
+										  <td>Q75.00</td>
+										  <td>Q150.00</td>
+										</tr>
+										<tr>
+										  <td>De Q9,000.01 a Q12,000.00</td>
+										  <td>Q100.00</td>
+										  <td>Q200.00</td>
+										</tr>
+										<tr>
+										  <td>De Q12,000.01 en adelante</td>
+										  <td>Q150.00</td>
+										  <td>Q300.00</td>
+										</tr>
+									</table>
+									</div>	
+								</div>
+							</div><!-- /.end form horizontal -->
+						</div><!-- /.box-body -->	
+					</div><!-- /.box -->
+					<!-- general form elements -->
+					<div class="box box-danger">
+						<div class="box-header">
+						  <h3 class="box-title">Datos de Pago</h3>
+						</div><!-- /.box-header -->
+						<!-- form start --> 
+						<div class="box-body">
+							<div class="form-horizontal">
+								<div class="form-group">						
+									<label class = "control-label col-md-2" >Numero Tarjeta:</label>
+									<div class="col-md-2">		
+										<div class="input-group">
+											<input type="text" id="_tnumero" class="form-control" data-inputmask="'mask': ['9999-9999-9999-9999', '9999 9999 9999 9999']" data-mask/>
+											<div class="input-group-addon">
+												<i class="fa fa-credit-card"></i>
+											</div>
+										</div><!-- /.input group -->
+									</div>
+								</div>
+								<!-- Date dd/mm/yyyy -->
+								<div class="form-group">
+									<label class = "control-label col-md-2">Fecha Expiración:</label>
+									<div class="col-md-2">	
+										<div class="input-group">
+										  <input type="text" id="_tfecha" class="form-control" data-inputmask="'alias': 'mm/yyyy'" data-mask/>
+										  <div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
+										  </div>
+										</div><!-- /.input group -->
+								  </div>
+								</div><!-- /.form group -->
+								<div class="form-group">						
+									<label class = "control-label col-md-2" >Codigo de Seguridad:</label>
+									<div class="col-md-1">		
+										<div class="input-group">
+											<input type="text" id="_tcodigo" class="form-control" data-inputmask="'mask': ['9999', '9999']" data-mask/>
+											<div class="input-group-addon">
+												<i class="fa fa-barcode"></i>
+											</div>
+										</div><!-- /.input group -->
+									</div>
+								</div>
+								<div class="box-footer">
+									<button type="submit" class="btn btn-primary">Pagar</button>
+								</div>
+							</div><!-- /end form -->
+						</div><!-- /.box-body -->				
+					</div><!-- /.box -->	
+
+				</form>				
+			</div>       
+          </div><!-- /.row (main row) -->
