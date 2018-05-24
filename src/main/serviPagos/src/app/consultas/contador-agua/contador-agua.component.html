@@ -4,7 +4,7 @@
 					<!-- general form elements -->
 					<div class="card">
 						<div class="card-header">
-						  <h3>Consulta de consumo de agua.</h3>
+						  <h3>Consulta de contador de agua.</h3>
 						</div><!-- /.box-header -->
 						<!-- form start --> 
 						<div class="card-block">
@@ -34,12 +34,14 @@
 			<label class="col-form-label">Nombre</label>			
 			<span class="form-control">{{result.vecinoAsociado}}</span>
 		</div>		
-	</div>
-	<div class="col-md-12" *ngIf="contadores.length > 0"> 
+	</div>	
+</div>
+<div class="row" *ngIf="contadores.length > 0">
+	<div class="col-md-12" > 
 		<ul>
 			<li *ngFor="let item of contadores">{{item.contador}}</li>
 		</ul>
 	</div>
-	<button type="button" class="btn btn-success" (click)="addContador()">Añadir</button>		
+	<button type="button" class="btn btn-success" (click)="addContador()" [disabled]="contador == undefined || contador == null">Añadir</button>		
 	<button type="button" class="btn btn-success" (click)="asociar()" [disabled]="contadores.length == 0">Asociar</button>	
 </div>

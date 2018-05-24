@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CiudadanoService } from '../service/ciudadano.service';
 import { NgbModal, NgbActiveModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { AsociarComponent } from '../asociar/asociar.component';
+import { CreditosComponent } from '../creditos/creditos.component';
 
 @Component({
   selector: 'app-servicios',
@@ -32,6 +33,18 @@ export class ServiciosComponent implements OnInit {
     let options: NgbModalOptions = {  size: 'lg' };
 
       const modalRef = this.modalService.open(AsociarComponent,options);
+      modalRef.componentInstance.dpi=this.ciudadano.cui;
+      modalRef.result.then((result) =>{                        
+                        
+                    }, (reason) => {
+                           console.log(reason);
+                    });
+  }
+
+  creditosService(){
+    let options: NgbModalOptions = {  size: 'lg' };
+
+      const modalRef = this.modalService.open(CreditosComponent,options);
       modalRef.componentInstance.dpi=this.ciudadano.cui;
       modalRef.result.then((result) =>{                        
                         

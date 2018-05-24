@@ -14,20 +14,34 @@ export class ContadorAguaComponent implements OnInit {
 	contador:any;
 	contadores:Array<any>;
 	result:any;
+	persona:any;
 
 
   constructor(private consultaService:ConsultaService,private ciudadanoService:CiudadanoService) { this.contadores = new Array<any>();}
 
   ngOnInit() {
+  	this.buscarContadores();
   }
+
+  	buscarContadores(){
+  		this.consultaService.consultaDpi(this.dpi)
+  		.subscribe(response => {
+  			this.persona = response;
+  			let servicios = this.persona.data.servicio.filter(res => res.codigoServicio == this.servicio.codigoServicio);  			
+  			if(servicios.length > 0){
+  				this.contadores = servicios[0].contadores; 
+  			}  			
+  		}, error => {
+  			alert('Error');
+  		});
+  	}
 
 	consultar(){	  	
 	  	this.consultaService.consultaContador(this.contador)
 	  	.subscribe(response => {
-	  		console.log(response);
 	  		this.result = response;
 	  	}, error => {
-	  		alert(error);
+	  		alert('No se encontro el contrador que esta buscando.');
 	  	});
 	  }
 
@@ -51,7 +65,6 @@ export class ContadorAguaComponent implements OnInit {
 	  	ciudadano.dpi = this.dpi;
 	  	ciudadano.data = data;
 
-	  	console.log(ciudadano);
 	  	this.ciudadanoService.crearCiudadano(ciudadano)
 	  	.subscribe(response => {
 	  		alert(response.message);

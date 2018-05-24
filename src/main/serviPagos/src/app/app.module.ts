@@ -8,6 +8,7 @@ import { AppRoutingModule } from './config/app-routing.module';
 import { AppConfigModule } from './config/app-config.module';
 
 import {DropdownModule} from 'primeng/dropdown';
+import {InputMaskModule} from 'primeng/inputmask';
 
 import { CiudadanoService } from './service/ciudadano.service';
 import { ConsultaService } from './service/consulta.service';
@@ -24,6 +25,7 @@ import { IusiComponent } from './iusi/iusi.component';
 import { AsociarComponent } from './asociar/asociar.component';
 import { ConsultasComponent } from './consultas/consultas.component';
 import { ContadorAguaComponent } from './consultas/contador-agua/contador-agua.component';
+import { CreditosComponent } from './creditos/creditos.component';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { ContadorAguaComponent } from './consultas/contador-agua/contador-agua.c
     IusiComponent,
     AsociarComponent,
     ConsultasComponent,
-    ContadorAguaComponent
+    ContadorAguaComponent,
+    CreditosComponent
   ],
   imports: [
     DropdownModule,
@@ -50,9 +53,10 @@ import { ContadorAguaComponent } from './consultas/contador-agua/contador-agua.c
     HttpModule,
     NgbModule.forRoot(),
     AppRoutingModule,
-    AppConfigModule
+    AppConfigModule,
+    InputMaskModule
   ],
-  entryComponents: [AsociarComponent],
+  entryComponents: [AsociarComponent,CreditosComponent],
   providers: [CiudadanoService,ConsultaService],
   bootstrap: [AppComponent]
 })

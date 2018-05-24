@@ -1,0 +1,90 @@
+<div class="modal-header">
+	<h1>Consulta de Creditos</h1>
+</div>
+<div class="modal-body">
+	<div class="card">
+		<div class="card-block">
+			<div class="card">
+						<div class="card-header">
+						  <h3 class="box-title">Datos de Pago</h3>
+						</div><!-- /.box-header -->
+						<!-- form start --> 
+						<div class="card-block">
+							<div class="row">
+								<div class="form-group col-md-6">						
+									<label class = "control-label" >Numero Tarjeta:</label>
+										<div class="input-group">
+											<p-inputMask [(ngModel)]="pago.numeroTarjeta" placeholder="9999-9999-9999-9999" mask="9999-9999-9999-9999"></p-inputMask>
+											<div class="input-group-addon">
+												<i class="fa fa-credit-card"></i>
+											</div>
+										</div><!-- /.input group -->
+								</div>
+								<!-- Date dd/mm/yyyy -->
+								<div class="form-group col-md-6">
+									<label class = "control-label">Fecha Expiración:</label>
+										<div class="input-group">
+										  <p-inputMask mask="99/9999" [(ngModel)]="pago.fechaExp" placeholder="99/9999" slotChar="mm/yyyy"></p-inputMask>
+										  <div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
+										  </div>
+										</div><!-- /.input group -->
+								</div><!-- /.form group -->
+							</div>
+							<div class="row">
+								<div class="form-group col-md-6">						
+									<label class = "control-label" >Codigo de Seguridad:</label>
+										<div class="input-group">
+											<p-inputMask mask="9999" [(ngModel)]="pago.codigoSeguridad" placeholder="9999"></p-inputMask>
+											<div class="input-group-addon">
+												<i class="fa fa-barcode"></i>
+											</div>
+										</div><!-- /.input group -->
+								</div>
+								<div class="form-group col-md-6">						
+									<label class = "control-label" >Monto a Acreditar:</label>
+										<div class="input-group">
+											<p-inputMask mask="999" [(ngModel)]="pago.monto" placeholder="999"></p-inputMask>
+											<div class="input-group-addon">
+												<i class="fa fa-money"></i>
+											</div>
+										</div><!-- /.input group -->
+								</div>
+							</div><!-- /end form -->
+							<div class="card-footer">
+									<button type="button" class="btn btn-primary" (click)="pagar()">Pagar</button>
+								</div>
+						</div><!-- /.box-body -->				
+					</div><!-- /.box -->
+		</div>
+	</div>
+	<hr>
+	<div class="card" *ngIf="persona != undefined">
+		<div class="card-block" *ngIf="persona.data != undefined">
+			<table class="table table-striped" *ngIf="persona.data.creditos != undefined">
+				<thead>
+					<tr>
+						<th>No. Pago</th>
+						<th>Monto Acreditado</th>
+						<th>Monto Debitado</th>
+						<th>Fecha Realizado</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let credito of persona.data.creditos">
+						<td>{{credito.numeroPago}}</td>
+						<td>{{credito.montoAcreditado}}</td>
+						<td>{{credito.montoDebitado}}</td>
+						<td>{{credito.fechaRealizado}}</td>
+					</tr>
+					<tr>
+						<td style="font-weight: bold;">total</td>
+						<td>{{totales.credito}}</td>
+						<td>{{totales.debito}}</td>
+						<td>{{totales.total}}</td>
+					</tr>
+				</tbody>
+			</table>	
+		</div>
+	</div>
+</div>
